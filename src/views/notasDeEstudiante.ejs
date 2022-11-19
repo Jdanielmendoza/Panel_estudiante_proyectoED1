@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel De Estudiante</title>
+    <style>
+        *{
+            margin:0; 
+            padding: 0;
+            box-sizing: border-box;
+        font-family: 'Roboto';
+        }
+        
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        max-height: 1500px;
+        background: linear-gradient(135deg , #1d2b3a 50% ,#2e3c4b);
+        color:#fff; 
+      }
+      header{
+        width: 100%;
+        height: 70px;
+        background-color: #00d6bd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #1d2b3a;
+    }
+    header h4{
+        font-size: 22px;
+        font-weight: 800;
+        font-family: 'Roboto';
+        letter-spacing: 3px;
+        margin-left: 20px;
+    }
+    header div{
+        margin-right: 18px;
+    }
+
+    .datos{
+        height: auto;
+        padding: 25px 10px 0 10px;
+    }
+
+    .container>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+    .container>div>div{
+        border:1px solid #00dfc4; 
+        border-radius: 7px;
+        margin:20px 0 70px 0;
+        max-width: 600px;
+        min-width: 330px;
+        width: 100%;
+        padding:10px 5px 5px 10px;
+        
+
+    }
+    .container>div>div>.datoPersona{
+        position: relative;
+        transform: translateY(-22px) ;
+        background-color: #00dfc4;
+        width: 50%;
+        border-radius: 10px;
+        padding: 4px 0 4px 7px;
+        color: #1d2b3a;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    .container>div>div>div{
+        width:100%;
+        border:1px solid #445;
+        border-radius: 5px;
+        margin-bottom: 17px;
+        padding: 12px 5px 5px 5px;
+    }
+    .container>div>div>div>label{
+        position: absolute;
+        transform: translateY(-20px) translateX(7px);
+        font-size: 10px;
+        border-left:1px solid #00dfc4;
+        border-right: 1px solid #00dfc4;
+        padding:0 2px;
+    }
+
+    .datos_notas{
+        padding-top: 30px !important;
+        display: grid;
+        grid-template-areas:
+        'nota1 nota2 nota3'
+        'nota4 nota5 nota6';
+        gap: 30px 10px;
+        height: 170px;
+    }
+    .datos_notas>div{
+        width: 100px !important;
+    }
+
+    .nota1{
+        grid-area: nota1;
+    }
+    .nota2{
+        grid-area: nota2;
+    } 
+    .nota3{
+        grid-area: nota3;
+    } 
+    .nota4{
+        grid-area: nota4;
+    } 
+    .nota5{
+        grid-area: nota5;
+    } 
+    .nota6{
+        grid-area: nota6;
+    } 
+
+    .nota{
+        position:absolute; 
+        transform: translateY(-40px) translateX(0);
+        background-color: #00dfc4;
+        min-width: 180px;
+        max-width: 320px;
+        width: 50%;
+        border-radius: 10px;
+        padding: 4px 0 4px 7px;
+        color: #1d2b3a;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+    </style>
+    <link rel="icon" href="codingbrowser_102152.ico">
+
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h4><%= data.Registro %></h4>
+        <div><img src="account_avatar_face_man_people_profile_user_icon_123197.ico" alt=""></div>
+      </header>
+      <div class="datos">
+        <div class="datos_personales">
+            <p class="datoPersona">DATOS PERSONALES</p>
+            <div>
+                <label for="name">Nombre Completo</label>
+                <p class="name"><%= data.nombre%></p>
+            </div>
+            <div>
+                <label for="materia">Materia</label>
+                <p class="materia"><%= data.materia%></p>
+            </div>
+            <div>
+                <label for="gestion">Gestion</label>
+                <p class="gestion"><%= data.gestion%></p>
+            </div>
+        </div>
+        <div class="datos_notas">
+            <P class="nota">TUS NOTAS</P>
+            <div class="nota1">
+                <label for="1erParcial">1er Parcial</label>
+                <p class="1erParcial"><%= data.nota1 %></p>
+            </div>
+            <div class="nota2">
+                <label for="2doParcial">2do Parcial</label>
+                <p class="2doParcial"><%= data.nota2 %></p>
+            </div>
+            <div class="nota3">
+                <label for="ExFinal">Examen Final</label>
+                <p class="ExFinal"><%= data.nota3 %></p>
+            </div>
+            <div class="nota4">
+                <label for="prac">Practico</label>
+                <p class="prac"><%= data.notaPc %></p>
+            </div>
+            <div class="nota5">
+                <label for="Rep">Repechaje</label>
+                <p class="Rep"><%= data.notaR %></p>
+            </div>
+            <div class="nota6">
+                <label for="PrFin">Promedio Final</label>
+                <p class="PrFin"><%= data.notaPr %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
