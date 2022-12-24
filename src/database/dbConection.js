@@ -1,10 +1,10 @@
 import {createPool} from "mysql2/promise"; 
 
 export const pool = createPool({
-    host:"containers-us-west-116.railway.app",
-    port:"6599",
+    host:"containers-us-west-190.railway.app",
+    port:"6104",
     user:"root",
-    password:"Qv3cjbIf881cFS57gAzB",
+    password:"cKXiUDpADUdZFbakF0gi",
     database:"railway",
     ssl:{
         rejectUnauthorized:false
